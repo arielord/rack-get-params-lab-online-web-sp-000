@@ -21,7 +21,7 @@ class Application
         @@cart.each {|item| resp.write "#{item}\n"}
       end
     elsif req.path.match(/add/)
-      search_term = req.params["q"]
+      search_term = req.params["data"]
       if @@items.include?(search_term)
         @@cart << search_term
         resp.write "added #{search_term}"
